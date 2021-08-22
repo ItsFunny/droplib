@@ -16,6 +16,7 @@
 ## 内存
 - 字段压缩合并
 ## 性能
+- cache
  - 需要提供gc
  - region需要parallel
  - reflect需要concurrent
