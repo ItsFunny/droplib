@@ -1,0 +1,3 @@
+- 适用于 长期监听的这种,适用于组件之间交互,与listener不同,listener适用于很快就监听到相关数据
+  - 多客户端(多client)
+  - 不适用于当client,但是多event类型

@@ -1,0 +1,63 @@
+{
+  "genesis_time": "2021-04-07T09:57:37.935292Z",
+  "chain_id": "test-chain-I6S5rB",
+  "initial_height": 0,
+  "consensus_params": {
+    "block": {
+      "max_bytes": 22020096,
+      "max_gas": -1
+    },
+    "evidence": {
+      "max_age_num_blocks": 100000,
+      "max_age_duration": 172800000000000,
+      "max_bytes": 1048576
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {
+      "app_version": 0
+    }
+  },
+  "validators": [
+    {
+      "address": "E3028811AD7CE856054783D9A4F4CAEADDC12E01",
+      "pub_key": "vvOwCH+8TitDTWPpllTe9MS8ZFdyY3q4iXBiwI1lE9g=",
+      "power": 10,
+      "name": "orderer"
+    },
+    {
+      "address": "4C1AEB60039BAC6D3780CCF04868F44C7CCF505E",
+      "pub_key": "fCqQBARi4p+6tF3MnWWXxEIhm5n+w3X/xHVSAXPYoDo=",
+      "power": 10,
+      "name": "orderer1"
+    },
+    {
+      "address": "6ABD2BCB8DCD0B695141D41078708D5B77B6A4EC",
+      "pub_key": "GG7gyQoNmTrKiChTbRII19QGBLaFykRgb+bkOyQRERs=",
+      "power": 10,
+      "name": "orderer2"
+    },
+    {
+      "address": "DD4FB7DA808F743FA9756A16B919AB87528451DB",
+      "pub_key": "Y1Im6EN4egPGR8zL5AZJbVllOVNui25g1buggi0s/FU=",
+      "power": 10,
+      "name": "orderer3"
+    },
+    {
+      "address": "F2BC575834078767DA4284C7E5796792542D127B",
+      "pub_key": "hSh/XeflsvzgwMmXK78t+r+m+ufDXpHvPiYtL/f9D5U=",
+      "power": 10,
+      "name": "orderer4"
+    },
+    {
+      "address": "880B7F73D2BDF0E505834BA9ECE894149A41DD96",
+      "pub_key": "LEkTi1JO+DXOD9u6KTuebSwd4e4HEriFJ71mizxbWGU=",
+      "power": 10,
+      "name": "orderer5"
+    }
+  ],
+  "app_hash": ""
+}

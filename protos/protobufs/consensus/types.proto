@@ -1,0 +1,80 @@
+syntax = "proto3";
+package protobufs.consensusproto;
+
+option go_package = "github.com/hyperledger/fabric-droplib/protos/protobufs/consensus";
+import "gogoproto/gogo.proto";
+//import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "github.com/hyperledger/fabric-droplib/protos/protobufs/types/types.proto";
+import "github.com/hyperledger/fabric-droplib/protos/libs/bits/types.proto";
+
+
+message MessageProtoWrapper {
+  oneof sum {
+//    NewRoundStep  new_round_step  = 1;
+//    NewValidBlock new_valid_block = 2;
+//    Proposal      proposal        = 3;
+//    ProposalPOL   proposal_pol    = 4;
+//    BlockPart     block_part      = 5;
+    VoteProtoWrapper          vote            = 6;
+//    HasVote       has_vote        = 7;
+    VoteSetMaj23ProtoWrapper  vote_set_maj23  = 8;
+//    VoteSetBits   vote_set_bits   = 9;
+  }
+}
+
+message ProposalProtoWrapper {
+  tendermint.types.ProposalProto proposal = 1 [(gogoproto.nullable) = false];
+  // 额外的字段,如果为SIGNED_MSG_TYPE_PROPOSAL,则还携带了block数据信息,移除block part 数据信息
+  bytes extraData = 8;
+}
+
+message ProposalPOLProtoWrapper {
+  int64                         height = 1;
+  int32                         proposal_pol_round = 2;
+  tendermint.libs.bits.BitArrayProto proposal_pol = 3 [(gogoproto.nullable) = false];
+}
+
+message VoteProtoWrapper{
+  tendermint.types.VoteProto vote = 1;
+}
+
+message  NewRoundStepProtoWrapper{
+  tendermint.types.NewRoundStepProto new_round_step = 1;
+}
+
+
+message VoteSetMaj23ProtoWrapper {
+  tendermint.types.VoteSetMaj23Proto vote_set_maj23 = 1;
+}
+
+
+message NewValidBlockProtoWrapper {
+  int64                          height                = 1;
+  int32                          round                 = 2;
+  tendermint.types.PartSetHeaderProto block_part_set_header = 3 [(gogoproto.nullable) = false];
+  tendermint.libs.bits.BitArrayProto  block_parts           = 4;
+  bool                           is_commit             = 5;
+}
+
+// HasVote is sent to indicate that a particular vote has been received.
+message HasVoteProtoWrapper {
+  int64                          height = 1;
+  int32                          round  = 2;
+  tendermint.types.SignedMsgType type   = 3;
+  int32                          index  = 4;
+}
+
+// VoteSetBits is sent to communicate the bit-array of votes seen for the BlockID.
+message VoteSetBitsProtoWrapper {
+  int64                          height   = 1;
+  int32                          round    = 2;
+  tendermint.types.SignedMsgType type     = 3;
+  tendermint.types.BlockIDProto       block_id = 4 [(gogoproto.customname) = "BlockID", (gogoproto.nullable) = false];
+  tendermint.libs.bits.BitArrayProto  votes    = 5 [(gogoproto.nullable) = false];
+}
+
+message BlockPartProtoWrapper{
+  int64                 height = 1;
+  int32                 round  = 2;
+  tendermint.types.PartProto part   = 3 [(gogoproto.nullable) = false];
+}

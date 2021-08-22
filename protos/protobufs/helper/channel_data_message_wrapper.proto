@@ -1,0 +1,50 @@
+syntax = "proto3";
+package tendermint.helper;
+
+option go_package = "github.com/hyperledger/fabric-droplib/protos/protobufs/helper";
+
+import   "github.com/hyperledger/fabric-droplib/protos/protobufs/consensus/types.proto";
+message ConsensusVoteChannelDataMessageWrapper{
+  oneof sum{
+    protobufs.consensusproto.VoteProtoWrapper vote = 1;
+  }
+}
+/*
+  NewRoundStepProtoWrapper
+  NewValidBlockProtoWrapper
+  HasVoteProtoWrapper
+  VoteSetMaj23ProtoWrapper
+ */
+message ConsensusStateChannelDataMessageWrapper{
+  oneof sum{
+    protobufs.consensusproto.NewRoundStepProtoWrapper new_round_step = 1;
+    protobufs.consensusproto.NewValidBlockProtoWrapper new_valid_block = 2;
+    protobufs.consensusproto.HasVoteProtoWrapper    has_vote = 3;
+    protobufs.consensusproto.VoteSetMaj23ProtoWrapper vote_set_maj23 = 4;
+  }
+
+}
+/*
+  ProposalProtoWrapper
+  ProposalPOLProtoWrapper
+  BlockPartProtoWrapper
+ */
+message ConsensusDataChannelDataMessageWrapper{
+  oneof sum{
+    protobufs.consensusproto.ProposalProtoWrapper proposal = 1;
+    protobufs.consensusproto.ProposalPOLProtoWrapper proposalPol = 2;
+    protobufs.consensusproto.BlockPartProtoWrapper blockPart = 3;
+  }
+}
+
+
+//
+/*
+  VoteSetBitsProtoWrapper
+
+ */
+message ConsensusVoteSetBitsChannelDataMessageWrapper{
+  oneof sum{
+    protobufs.consensusproto.VoteSetBitsProtoWrapper voteSetBits = 1;
+  }
+}

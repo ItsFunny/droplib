@@ -1,0 +1,37 @@
+syntax = "proto3";
+package tendermint.types;
+
+option go_package = "github.com/hyperledger/fabric-droplib/protos/protobufs/types";
+
+import "gogoproto/gogo.proto";
+import "github.com/hyperledger/fabric-droplib/protos/protobufs/types/types.proto";
+import "google/protobuf/timestamp.proto";
+
+message CanonicalBlockIDProto {
+  bytes                  hash            = 1;
+  CanonicalPartSetHeaderProto part_set_header = 2 [(gogoproto.nullable) = false];
+}
+
+message CanonicalPartSetHeaderProto {
+  uint32 total = 1;
+  bytes  hash  = 2;
+}
+
+message CanonicalProposalProto {
+  tendermint.types.SignedMsgType             type      = 1;  // type alias for byte
+  sfixed64                  height    = 2;  // canonicalization requires fixed size encoding here
+  sfixed64                  round     = 3;  // canonicalization requires fixed size encoding here
+  int64                     pol_round = 4 [(gogoproto.customname) = "POLRound"];
+  CanonicalBlockIDProto          block_id  = 5 [(gogoproto.customname) = "BlockID"];
+  google.protobuf.Timestamp timestamp = 6 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+  string                    chain_id  = 7 [(gogoproto.customname) = "ChainID"];
+}
+
+message CanonicalVoteProto {
+  tendermint.types.SignedMsgType             type      = 1;  // type alias for byte
+  sfixed64                  height    = 2;  // canonicalization requires fixed size encoding here
+  sfixed64                  round     = 3;  // canonicalization requires fixed size encoding here
+  CanonicalBlockIDProto          block_id  = 4 [(gogoproto.customname) = "BlockID"];
+  google.protobuf.Timestamp timestamp = 5 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+  string                    chain_id  = 6 [(gogoproto.customname) = "ChainID"];
+}

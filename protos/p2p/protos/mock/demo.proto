@@ -1,0 +1,40 @@
+syntax = "proto3";
+package protocols.p2p;
+option go_package = "github.com/hyperledger/fabric-droplib/terminal/protos/mock";
+
+message DemoC1ChannelMessageWrapper{
+}
+message DemoC1ChannelDataMessageWrapper{
+  oneof sum{
+    DemoC1Message1Proto demo_c1_message1 = 1;
+    DemoC1Message2Proto demo_c1_message2 = 2;
+  }
+}
+
+message DemoC1Message1Proto{
+  string c11 = 1;
+}
+
+message DemoC1Message2Proto{
+  string  c12 = 1;
+}
+
+
+message DemoC2ChannelMessageWrapper {
+
+
+}
+message DemoC2ChannelDataMessageWrapper {
+  oneof sum{
+    DemoC2Message1Proto demo_c2_message1 = 1;
+    DemoC2Message2Proto demo_c2_message2 = 2;
+  }
+}
+
+message DemoC2Message1Proto{
+  string c21 = 1;
+}
+
+message DemoC2Message2Proto{
+  string c22 = 1;
+}

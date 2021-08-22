@@ -1,0 +1,95 @@
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
+# github.com/emirpasic/gods v1.12.0
+github.com/emirpasic/gods/containers
+github.com/emirpasic/gods/lists
+github.com/emirpasic/gods/lists/arraylist
+github.com/emirpasic/gods/utils
+# github.com/hyperledger/fabric-droplib/base/log v0.0.0-00010101000000-000000000000 => ../../base/log
+## explicit
+github.com/hyperledger/fabric-droplib/base/log
+github.com/hyperledger/fabric-droplib/base/log/common
+github.com/hyperledger/fabric-droplib/base/log/config
+github.com/hyperledger/fabric-droplib/base/log/log4go
+github.com/hyperledger/fabric-droplib/base/log/modules
+github.com/hyperledger/fabric-droplib/base/log/v2
+github.com/hyperledger/fabric-droplib/base/log/v2/base
+github.com/hyperledger/fabric-droplib/base/log/v2/component
+github.com/hyperledger/fabric-droplib/base/log/v2/logrus
+# github.com/hyperledger/fabric-droplib/base/services v0.0.0-00010101000000-000000000000 => ../../base/services
+## explicit
+github.com/hyperledger/fabric-droplib/base/services
+github.com/hyperledger/fabric-droplib/base/services/constants
+github.com/hyperledger/fabric-droplib/base/services/e
+github.com/hyperledger/fabric-droplib/base/services/impl
+github.com/hyperledger/fabric-droplib/base/services/models
+# github.com/hyperledger/fabric-droplib/component/base v0.0.0-00010101000000-000000000000 => ../../component/base
+github.com/hyperledger/fabric-droplib/component/base
+# github.com/hyperledger/fabric-droplib/component/listener v0.0.0-00010101000000-000000000000 => ../../component/listener
+## explicit
+github.com/hyperledger/fabric-droplib/component/listener
+# github.com/hyperledger/fabric-droplib/component/pubsub v0.0.0-00010101000000-000000000000 => ../../component/pubsub
+github.com/hyperledger/fabric-droplib/component/pubsub/models
+github.com/hyperledger/fabric-droplib/component/pubsub/services
+# github.com/hyperledger/fabric-droplib/component/routine v0.0.0-00010101000000-000000000000 => ../../component/routine
+## explicit
+github.com/hyperledger/fabric-droplib/component/routine/services
+github.com/hyperledger/fabric-droplib/component/routine/services/v2
+github.com/hyperledger/fabric-droplib/component/routine/services/v2/internal
+github.com/hyperledger/fabric-droplib/component/routine/worker/gowp/workpoolv0
+# github.com/hyperledger/fabric-droplib/libs v0.0.0-00010101000000-000000000000 => ../../libs
+## explicit
+github.com/hyperledger/fabric-droplib/libs/channel
+github.com/hyperledger/fabric-droplib/libs/queue/concurrentpriority
+github.com/hyperledger/fabric-droplib/libs/random
+# github.com/hyperledger/fabric-droplib/structure v0.0.0-00010101000000-000000000000 => ../../structure
+## explicit
+github.com/hyperledger/fabric-droplib/structure/containers
+github.com/hyperledger/fabric-droplib/structure/lists
+github.com/hyperledger/fabric-droplib/structure/lists/arraylist
+github.com/hyperledger/fabric-droplib/structure/lists/doublylinkedlist
+github.com/hyperledger/fabric-droplib/structure/lists/singlylinkedlist
+github.com/hyperledger/fabric-droplib/structure/maps
+github.com/hyperledger/fabric-droplib/structure/maps/linkedhashmap
+github.com/hyperledger/fabric-droplib/structure/utils
+# github.com/mattn/go-colorable v0.1.8
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.12
+github.com/mattn/go-isatty
+# github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
+github.com/mgutz/ansi
+# github.com/petermattis/goid v0.0.0-20180202154549-b0b1615b78e5
+github.com/petermattis/goid
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
+# github.com/sasha-s/go-deadlock v0.3.1
+## explicit
+github.com/sasha-s/go-deadlock
+# github.com/sirupsen/logrus v1.8.1
+github.com/sirupsen/logrus
+# github.com/stretchr/testify v1.7.0
+## explicit
+github.com/stretchr/testify/assert
+github.com/stretchr/testify/require
+# golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20210423082822-04245dca01da
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1
+golang.org/x/term
+# gopkg.in/eapache/queue.v1 v1.1.0
+gopkg.in/eapache/queue.v1
+# gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
+gopkg.in/yaml.v3
+# github.com/hyperledger/fabric-droplib/base/log => ../../base/log
+# github.com/hyperledger/fabric-droplib/base/services => ../../base/services
+# github.com/hyperledger/fabric-droplib/common => ../../common
+# github.com/hyperledger/fabric-droplib/component/base => ../../component/base
+# github.com/hyperledger/fabric-droplib/component/listener => ../../component/listener
+# github.com/hyperledger/fabric-droplib/component/pubsub => ../../component/pubsub
+# github.com/hyperledger/fabric-droplib/component/routine => ../../component/routine
+# github.com/hyperledger/fabric-droplib/libs => ../../libs
+# github.com/hyperledger/fabric-droplib/structure => ../../structure

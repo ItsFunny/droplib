@@ -1,0 +1,10 @@
+syntax = "proto3";
+package tendermint.libs.bits;
+
+option go_package = "github.com/hyperledger/fabric-droplib/protos/libs/bits";
+
+message BitArrayProto {
+  int64           bits = 1;
+  repeated uint64 elems = 2;
+}
+

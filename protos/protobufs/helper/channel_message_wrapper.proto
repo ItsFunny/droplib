@@ -1,0 +1,24 @@
+syntax = "proto3";
+package tendermint.helper;
+
+option go_package = "github.com/hyperledger/fabric-droplib/protos/protobufs/helper";
+
+// vote
+message ConsensusVoteChannelMessageWrapper{
+
+}
+
+// state
+message ConsensusStateChannelMessageWrapper{
+
+}
+
+// data
+message ConsensusDataChannelMessageWrapper{
+
+}
+
+// VoteSetBits
+message ConsensusVoteSetBitsChannelMessageWrapper{
+
+}

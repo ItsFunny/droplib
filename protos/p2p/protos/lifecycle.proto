@@ -1,0 +1,38 @@
+syntax = "proto3";
+package protocols.p2p;
+option go_package = "github.com/hyperledger/fabric-droplib/terminal/protos";
+
+message LifeCycleDefaultChannelMessageWrapper{
+}
+message LifeCycleDefaultChannelDataMessageWrapper {
+  oneof sum{
+    PingMessageProto ping_message_proto = 1;
+    PongMessageProto pong_message_proto = 2;
+    PingPongBroadCastMessageProto broadcast_message_proto = 3;
+    MemberInfoBroadCastMessageProto member_info_broadcast_message_proto = 4;
+  }
+}
+
+message PingPongBroadCastMessageProto{
+  // 包含了端口号,ip等信息
+  // info: /tcp/ip/端口号/
+  string info = 1;
+
+}
+message PingMessageProto {
+  string ping = 1;
+}
+
+message PongMessageProto {
+  string pong = 1;
+}
+
+
+/////////////////////// member
+message MemberInfoBroadCastMessageProto{
+  repeated MemberInfoNodeMessageProto members = 1;
+}
+
+message MemberInfoNodeMessageProto{
+  string extern_multi_address = 1;
+}

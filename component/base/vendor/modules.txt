@@ -1,0 +1,34 @@
+# github.com/hyperledger/fabric-droplib/base/log v0.0.0-00010101000000-000000000000 => ../../base/log
+## explicit
+github.com/hyperledger/fabric-droplib/base/log/common
+github.com/hyperledger/fabric-droplib/base/log/config
+github.com/hyperledger/fabric-droplib/base/log/modules
+github.com/hyperledger/fabric-droplib/base/log/v2
+github.com/hyperledger/fabric-droplib/base/log/v2/base
+github.com/hyperledger/fabric-droplib/base/log/v2/logrus
+# github.com/hyperledger/fabric-droplib/base/services v0.0.0-00010101000000-000000000000 => ../../base/services
+## explicit
+github.com/hyperledger/fabric-droplib/base/services
+github.com/hyperledger/fabric-droplib/base/services/constants
+github.com/hyperledger/fabric-droplib/base/services/e
+github.com/hyperledger/fabric-droplib/base/services/impl
+github.com/hyperledger/fabric-droplib/base/services/models
+# github.com/mattn/go-colorable v0.1.8
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.12
+github.com/mattn/go-isatty
+# github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
+github.com/mgutz/ansi
+# github.com/sirupsen/logrus v1.8.1
+github.com/sirupsen/logrus
+# golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20210423082822-04245dca01da
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/plan9
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1
+golang.org/x/term
+# github.com/hyperledger/fabric-droplib/base/services => ../../base/services
+# github.com/hyperledger/fabric-droplib/base/log => ../../base/log

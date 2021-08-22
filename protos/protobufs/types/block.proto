@@ -1,0 +1,47 @@
+syntax = "proto3";
+package tendermint.types;
+
+option go_package = "github.com/hyperledger/fabric-droplib/protos/protobufs/types";
+import "gogoproto/gogo.proto";
+import "github.com/hyperledger/fabric-droplib/protos/protobufs/types/types.proto";
+import "github.com/hyperledger/fabric-droplib/protos/protobufs/types/evidence.proto";
+import "google/protobuf/timestamp.proto";
+
+message TendermintExtraDataProtoWrapper {
+  // 包含commit的信息,上一个区块的commit
+  tendermint.types.CommitProto lastCommit = 1;
+  // 以及区块的evidence
+  tendermint.types.EvidenceListProto evidence = 2 [(gogoproto.nullable) = false];
+
+  string                       chain_id = 3 [(gogoproto.customname) = "ChainID"];
+  google.protobuf.Timestamp    time = 4  [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+  // prev block info
+  tendermint.types.BlockIDProto last_block_id = 5 [(gogoproto.nullable) = false];
+
+  // hashes of block data
+  bytes last_commit_hash = 6;  // commit from validators from the last block
+
+  // hashes from the app output from the prev block
+  bytes validators_hash = 7;   // validators for the current block
+  bytes next_validators_hash = 8;   // validators for the next block
+  bytes consensus_hash = 9;  // consensus params for current block
+  bytes last_results_hash = 10;  // root hash of all results from the txs from the previous block
+
+  // consensus info
+  bytes evidence_hash = 11;  // evidence included in the block
+  bytes proposer_address = 12;  // original proposer of the block
+}
+
+// fabric block 中的extra data的反序列化struct
+message TendermintBlockProtoWrapper {
+  // fabric 的block 信息
+  tendermint.types.TendermintBlockHeaderProto  header = 1;
+  tendermint.types.TendermintBlockDataProto data = 2;
+  // fabric的元数据
+//  common.BlockMetadata blockMetadata = 3;
+  repeated bytes blockMetadata=3;
+  // 包含commit的信息,上一个区块的commit
+  tendermint.types.CommitProto lastCommit = 4;
+  // 以及区块的evidence
+  tendermint.types.EvidenceListProto evidence = 5 [(gogoproto.nullable) = false];
+}

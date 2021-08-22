@@ -1,0 +1,45 @@
+syntax = "proto3";
+package protocols.p2p;
+option go_package = "github.com/hyperledger/fabric-droplib/terminal/protos";
+// FIXME ,这里补齐, enum的作用在于,是完成一次立马release,还是保持连接状态
+import "gogoproto/gogo.proto";
+
+enum StreamFlag {
+  option (gogoproto.goproto_enum_stringer) = true;
+  option (gogoproto.goproto_enum_prefix) = false;
+  UNKNOWN = 0[(gogoproto.enumvalue_customname) = "UNKNOWN"];
+  // 立即close
+  CLOSE_IMMEDIATELY = 1[(gogoproto.enumvalue_customname) = "CLOSE_IMMEDIATELY"];
+  KEEP_IN_TOUCH = 2[(gogoproto.enumvalue_customname) = "KEEP_IN_TOUCH"];
+
+  // 需要回复数据
+  RESPONSE = 4[(gogoproto.enumvalue_customname) = "keep_in_touch"];
+  RESPONSE_AND_CLOSE = 5[(gogoproto.enumvalue_customname) = "RESPONSE_AND_CLOSE"];
+  RESPONSE_AND_IN_TOUCH = 10[(gogoproto.enumvalue_customname) = "RESPONSE_AND_IN_TOUCH"];
+}
+
+message BroadcastMessageProtoWrapper{
+
+
+}
+
+message StreamDataMessageWrapper {
+  uint32  ChannelID = 1;
+  StreamFlag streamFlag = 2;
+  bytes envelope = 3;
+  //  oneof sum{
+  //    StreamEnvelopeProto streamEnvelope = 1;
+  //  }
+}
+
+message StreamEnvelopeProto {
+  uint32  ChannelID = 1;
+  StreamFlag streamFlag = 2;
+  bytes envelope = 3;
+}
+
+message EnvelopeProto{
+
+
+}
+
